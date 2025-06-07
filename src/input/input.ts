@@ -66,7 +66,7 @@ export function setupInput(canvas: HTMLCanvasElement, grid: Grid, renderer: Rend
     }
   });
 
-  (window as any).drawIfMouseHeld = function(gridInstance: Grid, rendererInstance: Renderer) {
+  (window as any).drawIfMouseHeld = function(gridInstance: Grid) {
     if (isDrawing && lastMouseGridX !== null && lastMouseGridY !== null) {
       if (
         lastMouseGridX >= 0 && lastMouseGridX < gridInstance.width &&
