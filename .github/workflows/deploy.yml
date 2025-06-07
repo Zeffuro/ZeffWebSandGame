@@ -7,15 +7,18 @@ on:
     branches: ["main"] # Also run on pull requests to main for build checks
   workflow_dispatch: # Allows you to manually trigger the workflow from the GitHub UI
 
+# Permissions required for GitHub Pages deployment (placed at the top level)
+permissions:
+  contents: read    # To checkout your repository code
+  pages: write      # To deploy to GitHub Pages
+  id-token: write   # Crucial for OIDC authentication with GitHub Pages
+
 jobs:
   build:
     runs-on: ubuntu-latest
     
-    # Permissions required for GitHub Pages deployment
-    permissions:
-      contents: read # To checkout your repository code
-      pages: write   # To deploy to GitHub Pages
-      id-token: write # To authenticate with GitHub Pages
+    # Permissions defined at workflow level will apply here.
+    # No need to repeat the permissions block here unless you need job-specific overrides.
 
     strategy:
       matrix:
@@ -51,6 +54,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }} # Provides the URL to the deployed site
     runs-on: ubuntu-latest
     needs: build # This job depends on the 'build' job completing successfully
+    
+    # Permissions defined at workflow level will apply here.
+    # No need to repeat the permissions block here.
 
     steps:
       - name: Deploy to GitHub Pages
