@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sand Game</title>
+    <style>
+      body {
+        margin: 0;
+        background: #000;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        gap: 10px;
+        color: #eee;
+        font-family: sans-serif;
+      }
+      canvas {
+        border: 1px solid #444;
+        image-rendering: pixelated;
+      }
+      .controls {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .control-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+      }
+      .button-group {
+        display: flex;
+        gap: 5px;
+      }
+      button {
+        padding: 8px 15px;
+        background-color: #333;
+        color: #fff;
+        border: 1px solid #555;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1em;
+      }
+      button:hover {
+        background-color: #555;
+      }
+      button.active {
+        background-color: #007bff; /* Highlight for active button */
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="sandCanvas" width="200" height="150"></canvas>
+
+    <div class="controls">
+      <div class="control-group">
+        <span>Scale:</span>
+        <div class="button-group">
+          <button id="scale1">1x</button>
+          <button id="scale2">2x</button>
+          <button id="scale4">4x</button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <span>Brush Size:</span>
+        <div class="button-group">
+          <button id="brush1">1x1</button>
+          <button id="brush3">3x3</button>
+          <button id="brush5">5x5</button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <span>Material:</span>
+        <div class="button-group">
+          <button id="particleSand">Sand</button>
+          <button id="particleWater">Water</button>
+          <button id="particleStone">Stone</button>
+          <button id="particleEmpty">Eraser</button> </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
