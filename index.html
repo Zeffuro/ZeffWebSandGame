@@ -3,58 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Sand Game</title>
-    <style>
-      body {
-        margin: 0;
-        background: #000;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        gap: 10px;
-        color: #eee;
-        font-family: sans-serif;
-      }
-      canvas {
-        border: 1px solid #444;
-        image-rendering: pixelated;
-      }
-      .controls {
-        display: flex;
-        gap: 10px;
-        margin-top: 10px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .control-group {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-      }
-      .button-group {
-        display: flex;
-        gap: 5px;
-      }
-      button {
-        padding: 8px 15px;
-        background-color: #333;
-        color: #fff;
-        border: 1px solid #555;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 1em;
-      }
-      button:hover {
-        background-color: #555;
-      }
-      button.active {
-        background-color: #007bff; /* Highlight for active button */
-        border-color: #007bff;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-      }
-    </style>
+    <link rel="stylesheet" href="/css/style.css"> 
   </head>
   <body>
     <canvas id="sandCanvas" width="200" height="150"></canvas>
@@ -80,11 +29,8 @@
 
       <div class="control-group">
         <span>Material:</span>
-        <div class="button-group">
-          <button id="particleSand">Sand</button>
-          <button id="particleWater">Water</button>
-          <button id="particleStone">Stone</button>
-          <button id="particleEmpty">Eraser</button> </div>
+        <div class="button-group" id="materialButtons">
+          </div>
       </div>
     </div>
 
