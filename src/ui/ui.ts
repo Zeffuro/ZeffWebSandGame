@@ -6,7 +6,7 @@ type ParticleTypeChangeCallback = (type: ParticleType) => void;
 
 export function setupUI(
   onScaleChange: ScaleChangeCallback,
-  onBrushSizeChange: BrushSizeCallback,
+  onBrushSizeChange: BrushSizeChangeCallback,
   onParticleTypeChange: ParticleTypeChangeCallback
 ){
   let currentParticleType: ParticleType = ParticleTypes.Sand;
